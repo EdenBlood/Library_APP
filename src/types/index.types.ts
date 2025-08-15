@@ -4,6 +4,10 @@ export interface Layouts {
   children: ReactNode
 }
 
+export interface Context {
+  children: ReactNode
+}
+
 interface Author {
   name: string;
   otherBooks: string[];

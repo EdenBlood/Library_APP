@@ -2,12 +2,12 @@ import { useGetBooks } from "@/hooks/useGetBooks";
 import type { BookItem } from "@/types/index.types";
 import { createContext, type ReactNode } from "react";
 
-type BooksContextType = {
+export interface BooksState {
   books: BookItem[];
 }
 
 
-export const BooksContext = createContext<BooksContextType>({books: []});
+export const BooksContext = createContext<BooksState | null>(null);
 
 interface BookProviderProps {
   children: ReactNode

@@ -1,24 +1,12 @@
 @import 'tailwindcss';
 
 @layer components {
-  input[type="range"]::-webkit-slider-thumb {
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    background-color: #a855f7; /* purple-500 */
-    border-radius: 9999px;
-    border: 2px solid white;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
+  html {
+    scrollbar-gutter: stable;
+    scrollbar-width: thin; /* Firefox */
   }
-  
-  input[type="range"]::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
-    background-color: #a855f7;
-    border-radius: 9999px;
-    border: 2px solid white;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
+
+  html::-webkit-scrollbar {
+    width: 6px; /* Chrome, Edge, Safari */
   }
 }

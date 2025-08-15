@@ -1,7 +1,7 @@
-import { BooksContext } from "@/context/booksContext";
+import { BooksContext, type BooksState } from "@/context/booksContext";
 import { useContext } from "react";
 
-export function useBookContext() {
+export function useBookContext(): BooksState {
   const context = useContext(BooksContext);
 
   if (!context) {

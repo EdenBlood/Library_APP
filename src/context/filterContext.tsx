@@ -1,23 +1,28 @@
 import { useState, type ReactNode } from "react";
 import { createContext } from "react";
 
-interface FilterState {
+export interface FilterState {
   genereFilter: string;
   setGenereFilter: (genere: string) => void;
-  pageFilter: string;
-  setPageFilter: (pages: string) => void
+  maxPageFilter: number;
+  setMaxPageFilter: (pages: number) => void
+  minPageFilter: number;
+  setMinPageFilter: (pages: number) => void
 }
 
 export const FilterContext = createContext<FilterState | null>(null);
 
 export const FilterProvider = ({children}: {children: ReactNode}) => {
   const [ genereFilter, setGenereFilter ] = useState("Todos los géneros")
-  const [ pageFilter, setPageFilter ] = useState("2000");
+  const [ maxPageFilter, setMaxPageFilter ] = useState<number>(2000);
+  const [ minPageFilter, setMinPageFilter ] = useState<number>(1);
+
 
   return (
     <FilterContext.Provider value={{
       genereFilter, setGenereFilter,
-      pageFilter, setPageFilter
+      maxPageFilter, setMaxPageFilter,
+      minPageFilter, setMinPageFilter
     }}
     >
       {children}

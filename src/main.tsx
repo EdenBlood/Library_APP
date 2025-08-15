@@ -5,15 +5,18 @@ import { GlobalLayout } from '@/layouts/GlobalLayout'
 import { MainLayout } from '@/layouts/MainLayout'
 import { BookProvider } from './context/booksContext'
 import { FilterProvider } from './context/filterContext'
+import { UserProvider } from './context/userContext'
 
 createRoot(document.getElementById('root')!).render(
   <BookProvider>
     <FilterProvider>
-      <GlobalLayout>
-        <MainLayout>
-          <DashBoardView />
-        </MainLayout>
-      </GlobalLayout>
+      <UserProvider>
+        <GlobalLayout>
+          <MainLayout>
+            <DashBoardView />
+          </MainLayout>
+        </GlobalLayout>
+      </UserProvider>
     </FilterProvider>
   </BookProvider>
 )
