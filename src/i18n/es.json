@@ -1,6 +1,9 @@
 {
   "WELCOME": "Bienvenido a Tu librería de confianza",
-  "AVAILABLE_BOOKS": "Libros disponibles:",
-  "LABEL_GENERE": "Filtrar por género", 
-  "LABEL_PAGES": "Máximas páginas" 
+  "AVAILABLE_BOOKS": "Libros disponibles",
+  "LABEL_GENERE": "Filtrar por género",
+  "LABEL_PAGES": "Filtrar por Páginas",
+  "READING_LIST": "Lista de lectura",
+  "REMOVE_READING_LIST": "Quitar de la lista de lectura",
+  "ADD_READING_LIST": "Agregar a la lista de lectura"
 }

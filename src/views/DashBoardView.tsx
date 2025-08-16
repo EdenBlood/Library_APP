@@ -1,41 +1,38 @@
-  import { translate } from "../i18n";
-  import { BookList } from "@/components/book/BookList";
-  import { Filters } from "@/components/book/Filters";
-  import { useBookContext } from "@/hooks/useBookContext";
-  import { useFilterContext } from "@/hooks/useFilterContext";
-  import { useEffect, useState } from "react";
+import { BookList } from "@/components/book/BookList";
+import { Filters } from "@/components/book/Filters";
+import { NavBooks } from "@/components/book/NavBooks";
+import { useBookContext } from "@/hooks/useBookContext";
+import { useFilterContext } from "@/hooks/useFilterContext";
+import { useEffect, useState } from "react";
 
-  export function DashBoardView() {
-    //* Obtenemos los libros disponibles.
-    const { books } = useBookContext()
-    const [ filteredBooks, setFilteredBooks ] = useState(books);
-    const { genereFilter, minPageFilter, maxPageFilter } = useFilterContext()
+export function DashBoardView() {
+  //* Obtenemos los libros disponibles.
+  const { books } = useBookContext();
+  const [filteredBooks, setFilteredBooks] = useState(books);
+  const { genereFilter, minPageFilter, maxPageFilter } = useFilterContext();
 
-    useEffect(() => {
-      setFilteredBooks(books.filter(({ book }) => {
-        const matchGenere = genereFilter === "Todos los géneros" || book.genere === genereFilter;
-        const matchPages = book.pages <= maxPageFilter && book.pages >= minPageFilter;
+  useEffect(() => {
+    setFilteredBooks(
+      books.filter(({ book }) => {
+        const matchGenere =
+          genereFilter === "Todos los géneros" || book.genere === genereFilter;
+
+        const matchPages =
+          book.pages <= maxPageFilter && book.pages >= minPageFilter;
         return matchGenere && matchPages;
-      }))
-    }, [genereFilter, maxPageFilter, minPageFilter, books])
-    
-    return (
-      <>
-        <main className="max-w-5xl mx-auto bg-slate-800 min-h-screen flex flex-col gap-5">
-          <h1 className="font-bold text-4xl text-center">{translate("WELCOME")}</h1>
+      })
+    );
+  }, [genereFilter, maxPageFilter, minPageFilter, books]);
 
-          <section className="w-full flex justify-between">
-            <h2 className="font-bold">{translate("AVAILABLE_BOOKS")}</h2>
+  return (
+    <>
+      <section className="w-full flex justify-between items-center gap-4 py-4 px-6 bg-black">
+        <NavBooks />
 
-            <Filters />
+        <Filters />
+      </section>
 
-          </section>
-          
-          <section className="grid grid-cols-6 gap-4">
-
-            <BookList books={filteredBooks} />
-          </section>
-        </main>
-      </>
-    )
-  }
+      <BookList books={filteredBooks} />
+    </>
+  );
+}

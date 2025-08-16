@@ -1,10 +1,9 @@
-import type { Layouts } from "@/types/index.types";
+import { Outlet } from "react-router-dom";
 
-
-export function GlobalLayout({children}: Layouts) {
+export function GlobalLayout() {
   return (
     <>
-      {children}
+      <Outlet />
     </>
-  )
+  );
 }

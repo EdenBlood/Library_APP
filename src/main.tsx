@@ -1,22 +1,17 @@
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import { DashBoardView } from '@/views/DashBoardView'
-import { GlobalLayout } from '@/layouts/GlobalLayout'
-import { MainLayout } from '@/layouts/MainLayout'
-import { BookProvider } from './context/booksContext'
-import { FilterProvider } from './context/filterContext'
-import { UserProvider } from './context/userContext'
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import { BookProvider } from "./context/booksContext";
+import { FilterProvider } from "./context/filterContext";
+import { UserProvider } from "./context/userContext";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router";
 
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById("root")!).render(
   <BookProvider>
     <FilterProvider>
       <UserProvider>
-        <GlobalLayout>
-          <MainLayout>
-            <DashBoardView />
-          </MainLayout>
-        </GlobalLayout>
+        <RouterProvider router={router} />
       </UserProvider>
     </FilterProvider>
   </BookProvider>
-)
+);

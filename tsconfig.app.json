@@ -19,7 +19,7 @@
       "@/context/*": ["context/*"],
       "@/hooks/*": ["hooks/*"],
       "@/types/*": ["types/*"],
-      "@/colors/*": ["colors/*"],
+      "@/colors/*": ["colors/*"]
     },
 
     /* Bundler mode */

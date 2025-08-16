@@ -2,19 +2,20 @@ import { useFilterContext } from "@/hooks/useFilterContext";
 import { translate } from "@/i18n/index";
 import { getTrackBackground, Range } from "react-range";
 
-
-
 export function InputPagesRange() {
-  const { maxPageFilter, setMaxPageFilter, minPageFilter, setMinPageFilter } = useFilterContext()
+  const { maxPageFilter, setMaxPageFilter, minPageFilter, setMinPageFilter } =
+    useFilterContext();
 
   const MIN = 1;
   const MAX = 2000;
   const STEP = 10;
   return (
     <>
-      <label className="font-bold" htmlFor="pages">{translate("LABEL_PAGES")}</label>
+      <label className="font-bold text-sm text-nowrap" htmlFor="pages">
+        {translate("LABEL_PAGES")}:
+      </label>
 
-      <div className="w-50">
+      <div className="w-46">
         <Range
           values={[Number(minPageFilter), Number(maxPageFilter)]}
           step={STEP}
@@ -33,8 +34,8 @@ export function InputPagesRange() {
                   values: [Number(minPageFilter), Number(maxPageFilter)],
                   colors: ["#ccc", "#a855f7", "#ccc"],
                   min: MIN,
-                  max: MAX
-                })
+                  max: MAX,
+                }),
               }}
             >
               {children}
@@ -54,5 +55,5 @@ export function InputPagesRange() {
         />
       </div>
     </>
-  )
+  );
 }
