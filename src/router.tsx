@@ -3,6 +3,7 @@ import { GlobalLayout } from "./layouts/GlobalLayout";
 import { MainLayout } from "./layouts/MainLayout";
 import { DashBoardView } from "./views/DashBoardView";
 import { ReadingListView } from "./views/ReadingListView";
+import { BookView } from "./views/BookView";
 
 export const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ export const router = createBrowserRouter([
           {
             element: <ReadingListView />,
             path: "/reading-list",
+          },
+          {
+            element: <BookView />,
+            path: "/book/:bookId",
           },
         ],
       },

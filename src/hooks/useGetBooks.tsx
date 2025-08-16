@@ -7,7 +7,7 @@ export function useGetBooks() {
   const [books, setBooks] = useState<BookItem[]>([]);
 
   useEffect(() => {
-    BooksService.getBooks().then(book => setBooks(book));
+    setBooks(BooksService.getBooks());
   }, []);
 
   return books;

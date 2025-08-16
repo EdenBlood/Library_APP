@@ -5,5 +5,13 @@
   "LABEL_PAGES": "Filtrar por Páginas",
   "READING_LIST": "Lista de lectura",
   "REMOVE_READING_LIST": "Quitar de la lista de lectura",
-  "ADD_READING_LIST": "Agregar a la lista de lectura"
+  "ADD_READING_LIST": "Agregar a la lista de lectura",
+  "HAVE_NOT_BOOKS": "No hay Libros en la lista de Lectura",
+  "ADD_BOOKS_TO_READING_LIST": "Agrega libros a la lista de Lectura",
+  "HERE": "Aquí",
+  "GENERE": "Genero",
+  "YEAR": "Año",
+  "SYNOPSIS": "Sinopsis",
+  "AUTHOR_NAME": "Autor",
+  "AUTHOR_ANOTHER_BOOKS": "Otros libros de"
 }
